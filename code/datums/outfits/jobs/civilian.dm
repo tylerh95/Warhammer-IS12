@@ -94,10 +94,9 @@
 	name = OUTFIT_JOB_NAME("principal agent")
 	l_ear = /obj/item/device/radio/headset/inquisition
 	uniform = /obj/item/clothing/under/rank/principalagent
-	//suit = /obj/item/clothing/suit/armor/agent
+	suit = /obj/item/clothing/suit/armor/agent
 	gloves = /obj/item/clothing/gloves/thick/swat/combat/warfare
-	//shoes = /obj/item/clothing/shoes/jackboots
-	shoes = null
+	shoes = /obj/item/clothing/shoes/jackboots
 	glasses = /obj/item/clothing/glasses/sunglasses/big
 	id_type = /obj/item/card/id/inquisition/principal_agent
 	back = /obj/item/storage/backpack/satchel/warfare
@@ -106,8 +105,8 @@
 	pda_type = null
 	pda_slot = null
 	neck = /obj/item/reagent_containers/food/drinks/canteen
-	//head = /obj/item/clothing/head/inqhelm
-	//mask = /obj/item/clothing/mask/gas/security/agent
+	head = /obj/item/clothing/head/inqhelm
+	mask = /obj/item/clothing/mask/gas/security/agent
 	backpack_contents = list(
 	/obj/item/reagent_containers/food/snacks/warfare/rat = 1,
 	/obj/item/stack/thrones = 1,
