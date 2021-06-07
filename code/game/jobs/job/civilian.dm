@@ -9,7 +9,7 @@
 	latejoin_at_spawnpoints = TRUE
 	open_when_dead = 1
 	supervisors = "Every Imperial Citizen"
-	selection_color = "#515151"
+	selection_color = "#337C81"
 	access = list(access_hydroponics, access_bar, access_kitchen)
 	minimal_access = list(access_bar)
 	outfit_type = /decl/hierarchy/outfit/job/service/bartender
@@ -41,7 +41,7 @@
 	open_when_dead = 1
 	latejoin_at_spawnpoints = TRUE
 	supervisors = "the Seneschal, the Commissar"
-	selection_color = "#515151"
+	selection_color = "#337C81"
 	access = list(access_hydroponics, access_bar, access_kitchen, access_maint_tunnels)
 	minimal_access = list(access_kitchen)
 	announced = FALSE
@@ -70,7 +70,7 @@
 	total_positions = 2
 	spawn_positions = 1
 	supervisors = "the Seneschal"
-	selection_color = "#515151"
+	selection_color = "#848484"
 	latejoin_at_spawnpoints = TRUE
 	access = list(access_hydroponics, access_bar, access_kitchen,access_maint_tunnels, access_grox)
 	minimal_access = list(access_hydroponics, access_maint_tunnels, access_kitchen, access_grox)
@@ -102,7 +102,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Seneschal and the Administrator"
-	selection_color = "#515151"
+	selection_color = "#337C81"
 	economic_modifier = 5
 	social_class = SOCIAL_CLASS_MED
 	announced = 0
@@ -139,7 +139,7 @@
 	social_class = SOCIAL_CLASS_MED
 	announced = 0
 	supervisors = "the Munitorum Priest, the Administrator and the Seneschal"
-	selection_color = "#515151"
+	selection_color = "#337C81"
 	access = list(access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_qm, access_mining, access_mining_station)
 	minimal_access = list(access_maint_tunnels, access_cargo, access_cargo_bot, access_mailsorting)
 	outfit_type = /decl/hierarchy/outfit/job/cargo/cargo_tech
@@ -169,7 +169,7 @@
 	total_positions = 0
 	spawn_positions = 0 //remember to open these one day when its ready
 	supervisors = "the Munitorum Priest and the Seneschal"
-	selection_color = "#515151"
+	selection_color = "#337C81"
 	economic_modifier = 5
 	access = list(access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_qm, access_mining, access_mining_station)
 	minimal_access = list(access_mining, access_mining_station, access_mailsorting)
@@ -186,7 +186,7 @@
 	latejoin_at_spawnpoints = TRUE
 	social_class = SOCIAL_CLASS_MIN
 	supervisors = "Every Imperial Citizen"
-	selection_color = "#515151"
+	selection_color = "#337C81"
 	access = list(access_janitor, access_maint_tunnels, access_engine, access_research, access_medical)
 	minimal_access = list(access_janitor, access_maint_tunnels, access_engine, access_research, access_medical)
 	//alt_titles = list("Custodian","Sanitation Technician")
@@ -232,7 +232,7 @@
 	latejoin_at_spawnpoints = TRUE
 	open_when_dead = 0
 	supervisors = "The Golden Throne, the Ministorum, the Ordos Hereticus"
-	selection_color = "#fd0707"
+	selection_color = "#FF3A3A"
 	economic_modifier = 7
 	minimal_player_age = 10
 	outfit_type = /decl/hierarchy/outfit/job/internal_affairs_agent
@@ -245,6 +245,8 @@
 		H.add_stats(rand(10,18), rand(10,18), rand(10,18), rand(10,18)) //highly trained and skilled
 		H.add_skills(rand(5,8),rand(5,8),rand(2,4),rand(1,3),0)
 		H.assign_random_quirk()
+		H.witchblood()
+		H.set_trait(new/datum/trait/death_tolerant())
 		H.warfare_language_shit(LANGUAGE_LOW_GOTHIC )
 		H.warfare_faction = IMPERIUM
 		H.get_idcard()?.access = get_all_accesses()
@@ -257,10 +259,11 @@
 
 /datum/job/leadinquisitor
 	title = "Ordos Helican Inquisitor"
-	department_flag = INQ
+	department_flag = INQ|COM
 	social_class = SOCIAL_CLASS_MAX
 	total_positions = 1
 	spawn_positions = 1
+	head_position = 1
 	supervisors = "The Golden Throne, the Ordos Hereticus, Lord Inquisitor Rorkan and the masters of the Ordos Helican"
 	selection_color = "#fd0707"
 	req_admin_notify = 1
@@ -279,7 +282,9 @@
 		H.add_skills(rand(7,10),rand(7,10),rand(2,4),rand(1,3),0)
 		H.assign_random_quirk()
 		H.warfare_language_shit(LANGUAGE_LOW_GOTHIC )
+		H.set_trait(new/datum/trait/death_tolerant())
 		H.warfare_faction = IMPERIUM
+		H.witchblood()
 		H.get_idcard()?.access = get_all_accesses()
 		H.inquisitor = 1
 		H.verbs += list(/mob/living/carbon/human/proc/declareheretic,)
@@ -302,7 +307,7 @@
 	species_role = "Child"
 	open_when_dead = 1
 	supervisors = "the Abbot and every adult you see."
-	selection_color = "#515151"
+	selection_color = "#848484"
 	access = list(access_janitor, access_maint_tunnels, access_engine, access_research, access_medical)
 	minimal_access = list(access_janitor, access_maint_tunnels, access_engine, access_research, access_medical)
 	outfit_type = /decl/hierarchy/outfit/job/service/undertaker
